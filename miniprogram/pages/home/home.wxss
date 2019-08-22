@@ -1,7 +1,10 @@
+page{
+  background: #f4f4f4;
+}
 /* 背景图 */
 
 .info-bg {
-  padding: 60rpx 0 0 30rpx;
+  padding: 55rpx 0 0 30rpx;
   box-sizing: border-box;
   width: 100%;
   height: 240rpx;
@@ -43,20 +46,25 @@
 /* 内容 */
 
 .content{
-  background: #fff;
+  box-sizing: border-box;  
   border-radius:12rpx 12rpx 0 0;
-  overflow: hidden;
+  overflow: hidden;  
   margin-top: -10rpx;
 }
 /* 年 */
+.year-item-block{
+  background: #fff;
+  margin-bottom: 10rpx;
+}
 .year {
+  position: relative;
   height: 80rpx;
   display: flex;
   color:#999;
   align-items: center;
   font-size: 24rpx;
   padding: 0 30rpx;
-  border-bottom: 1rpx solid #eee;
+  border-bottom: 1rpx solid #f4f4f4
 }
 
 .year .title{
@@ -73,13 +81,21 @@
 }
 
 /* 月 */
+.month-block{
+  box-sizing: border-box;  
+  overflow: hidden;
+  padding-left: 30rpx;
+  transition: height 0.3s ease;
+}
 .month {
-  height: 100rpx;
+  position: relative;
+  height: 140rpx;
+  box-sizing: border-box;
   display: flex;
   color:#999;
   align-items: center;
   font-size: 24rpx;
-  padding: 0 30rpx;
+  border-bottom: 1px solid #f9f9f9;
 }
 
 .month .title-box{
@@ -88,18 +104,151 @@
 
 .month .title-box .top{
   color: #353535;
-  height:36rpx;
-  font-size:30rpx;
+  font-size:40rpx;
+  height: 40rpx;
 }
 
 .month .title-box .bottom{
+  margin-top: 6rpx;
+}
+
+.month .main-box{
+
+}
+
+.month .main-box .top {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.month  .main-box .top .label{
+  margin-left: 10rpx;
+  font-size: 22rpx;
+}
+
+.month  .main-box .top .num{
+  color: #353535;
+  font-size: 40rpx;  
+}
+
+.month .main-box .bottom {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 6rpx;
+  font-size: 22rpx;
+}
+
+.month  .main-box .bottom .in{
+  padding-right: 20rpx;
+  margin-right: 20rpx;
+  border-right:1px solid #eee;
+}
+
+.month  .main-box .bottom .out{
   
 }
 
-.month .label{
-  
+.month  .main-box .bottom .in-label{
+  color: rgba(255, 68, 68, 0.5);
+  margin-right: 6rpx;
 }
 
-.month .num{
+.month  .main-box .bottom .out-label{
+  color: rgba(7, 193, 96, 0.5);
+  margin-right: 6rpx;
+}
+/* 日 */
+.day-block{
+  overflow: hidden;
+  box-sizing: border-box;  
+}
+.day-block-content{
+  background: #f9f9f9;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.day{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.day+.day{
+  margin-top: 30rpx;
+}
+
+.day .title-box{
+  width: 150rpx;
+  color: #999;
+}
+
+.day .title-box .top{
+  font-size:34rpx;
+  height: 34rpx;
+  
+}
+.day .title-box .bottom{
+  font-size:20rpx;
+  margin-top: 6rpx;
+}
+
+.day .main-box .top{
+  color: #000;
+  font-size: 30rpx;
+
+}
+
+.day .main-box .bottom{
+  margin-top: 6rpx;
+  color: #999;
+  font-size: 20rpx;
+  display: flex;  
+}
+
+.day .main-box .bottom .time{
+  margin-right: 20rpx;
+}
+
+.day .right-box {
+  position: absolute;
+  right: 0;
+  font-size: 30rpx;
+  color: #999;
+}
+
+.color-in {
+  color: #FF4444!important;
+}
+
+.color-out {
+  color: #07C160!important;
+}
+
+
+/* 箭头 */
+
+.arrow {
+  position: absolute;
+  right: 30rpx;
+}
+
+.arrow:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  top: calc(50% - 10rpx);
+  width: 16rpx;
+  height: 16rpx;
+  border-top: 2rpx solid #ccc;
+  border-right: 2rpx solid #ccc;
+  transform: rotate(135deg);
+  transition: all 0.3s ease;
+}
+
+.arrow_up:after{
+  transform: rotate(-45deg);
+  top: calc(50% - 6rpx);
   
 }

@@ -1,2 +1,71 @@
-<!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<view class="info-bg">
+  <view class="balance-label">结余</view>
+  <view class="balance-num">30,000</view>
+  <view class="money">
+    <view class="income">
+      <text class="label">收入</text> 10,000
+    </view>
+    <view class="expense">
+      <text class="label">支出</text> 10,000
+    </view>
+  </view>
+</view>
+
+<view class="content">
+  <!-- 年 -->
+  <view class="year-item-block" wx:for="{{yearList}}" wx:for-item="yearItem" wx:for-index="yearIndex" wx:key="yearIndex">
+    <view class="year" bindtap="yearLineTap" data-yindex="{{yearIndex}}" >
+      <view class="title">{{yearItem.label}}年</view>
+      <view class="label">结余</view>
+      <view class="num">{{yearItem.balance}}</view>
+      <view class="arrow {{ yearItem.isShow ? '' : 'arrow_up'}} arrow_box"></view>
+    </view>
+    <!-- 月 -->
+    <view class="month-block" style="height: {{yearItem.isShow ? 'auto' : 0}}">
+      <block  wx:for="{{yearItem.monthList}}" wx:for-item="monthItem" wx:for-index="monthIndex" wx:key="monthIndex">
+        <view class="month"  bindtap="monthLineTap" data-yindex="{{yearIndex}}" data-mindex="{{monthIndex}}">
+          <view class="title-box">
+            <view class="top">{{monthItem.label}}月</view>
+            <view class="bottom">{{yearItem.label}}</view>
+          </view>
+          <view class="main-box">
+            <view class="top">
+              <view class="num">{{monthItem.balance}}</view>
+              <view class="label">结余</view>
+            </view>
+            <view class="bottom">
+              <view class="in"><text class="in-label">流入</text>{{monthItem.inAmount}}</view>
+              <view class="out"><text class="out-label">流出</text>{{monthItem.outAmount}}</view>
+            </view>
+          </view>
+          <view class="arrow arrow_up"></view>
+        </view>
+        <!-- 日 -->
+        <view class="day-block" style="height: {{monthItem.isShow ? 'auto' : 0}}">
+          <view class="day-block-content">
+          <block  wx:for="{{monthItem.dayList}}" wx:for-item="dayItem" wx:for-index="dayIndex" wx:key="dayIndex">
+            <view class="day">
+              <view class="title-box" >
+                <block wx:if="{{dayIndex == 0 || dayItem.label !=monthItem.dayList[dayIndex - 1].label }}">
+                  <view class="top">{{dayItem.label}}</view>
+                  <view class="bottom">{{dayItem.weekLabel}}</view>
+                </block>
+              </view>
+              <view class="main-box">
+                <view class="top">
+                  {{dayItem.sortName}}
+                </view>
+                <view class="bottom">
+                  <view class="time">{{dayItem.minCreateTime}}</view>
+                  <view class="remark">{{dayItem.remark}}</view>
+                </view>
+              </view>
+              <view class="right-box {{dayItem.typeId == 1 ? 'color-in' : 'color-out' }}  ">180.00</view>
+            </view>
+          </block>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
