@@ -1,1 +1,21 @@
-/* pages/add/add.wxss */
+.main-box{
+  padding-left: 60rpx;
+  
+}
+.input-box{
+}
+.input-box .input{
+  
+}
+.cells{
+
+}
+.cell-item{
+
+}
+.label{
+
+}
+.content{
+
+}

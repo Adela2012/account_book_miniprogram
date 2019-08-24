@@ -1,0 +1,13 @@
+<view class="weui-navbar" style="border-bottom: 1rpx solid {{borderColor}}; height: {{height}}rpx;background: {{background}}; position: {{position}};">
+  <block wx:for="{{navBarConfig}}" wx:key="{{index}}">
+    <view 
+      id="{{index}}" 
+      class="weui-navbar__item " 
+      bindtap="onClickTab" 
+      style="line-height: {{height-1}}rpx; color: {{activeIndex == index ? activeColor: unActiveColor}}; "
+    >
+      <view class="weui-navbar__title" style="font-size: {{activeIndex == index ? activeFontSize : unActiveFontSize}}rpx;">{{item.title}}</view>
+    </view>
+  </block>
+  <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px); background-color: {{lineColor}}; width: {{lineWidth}}rpx; height: {{lineHeight}}rpx; border-radius: {{lineRadius}}rpx;bottom: {{lineBottom}}rpx;"></view>
+</view>

@@ -1,2 +1,29 @@
-<!--pages/add/add.wxml-->
-<text>pages/add/add.wxml</text>
+<!-- 导航栏 -->
+<v-nav-bar navBarConfig="{{navBarData}}" activeType="{{navType}}" bind:onClickTab="onClickTab" height="100" activeColor="#353535" lineWidth="28" borderColor="transparent" lineColor="#B68457"  lineRadius="4" lineBottom="20" position="relative" />
+
+<view class="main-box">
+<view class="input-box">
+  <input class="input" value="{{'0.00'}}"></input>
+</view>
+
+<view class="cells">
+  <view class="cell-item">
+    <view class="label">分类</view>
+    <view class="content">食物</view>
+  </view>
+  <view class="cell-item">
+    <view class="label">账户</view>
+    <view class="content">家庭</view>
+  </view>
+  <view class="cell-item">
+    <view class="label">时间</view>
+    <view class="content">8月22日 21:12</view>
+  </view>
+  <view class="cell-item">
+    <view class="label">备注</view>
+    <view class="content">哈哈哈</view>
+  </view>
+</view>
+</view>
+
+

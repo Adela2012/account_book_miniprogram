@@ -1,1 +1,6 @@
-{}
+{
+  "navigationBarTitleText": "记一笔",
+  "usingComponents": {
+    "v-nav-bar": "/components/navBar/navBar"
+  }
+}

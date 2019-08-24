@@ -5,7 +5,22 @@ Page({
    * Page initial data
    */
   data: {
+    navBarData: [{
+      title: '收入',
+      type: '1'
+    }, {
+      title: '支出',
+      type: '2'
+    }],
+    navType: '1',
+  },
 
+  /**
+   * 导航栏点击
+   */
+  onClickTab(e) {
+    let navType = e.detail.selectType
+    this.setData({navType})
   },
 
   /**
